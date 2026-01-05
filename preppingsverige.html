@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRISGUIDEN - Beredskap för alla situationer</title>
+    <meta name="description" content="Din kompletta guide till prepping i Sverige. Lär dig överlevnadstekniker, beredskapsplanering och hitta de bästa produkterna.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3A7D44',
+                        secondary: '#2D3748',
+                        accent: '#E53E3E',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('banners/00002-1344087965.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Cookie Banner Styles */
+        .cookie-banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .cookie-text {
+            flex: 1;
+        }
+        .cookie-message {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .cookie-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+        .cookie-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .cookie-accept {
+            background-color: #3A7D44;
+            color: white;
+        }
+        .cookie-accept:hover {
+            background-color: #29703d;
+        }
+        .cookie-settings {
+            background-color: #2D3748;
+            color: white;
+        }
+        .cookie-settings:hover {
+            background-color: #4A5568;
+        }
+        .cookie-reject {
+            background-color: transparent;
+            color: white;
+            border: 1px solid #718096;
+        }
+        .cookie-reject:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        @media (max-width: 768px) {
+            .cookie-banner-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            .cookie-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .cookie-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i data-feather="shield" class="text-primary h-8 w-8"></i>
+                        <span class="ml-2 text-xl font-bold text-secondary">KRISGUIDEN</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#" class="text-primary px-3 py-2 rounded-md text-sm font-medium border-b-2 border-primary">Hem</a>
+<a href="guider.html" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Guider</a>
+                    <a href="artiklar.html" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Artiklar</a>
+                    <a href="produkter.html" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Produkter</a>
+                    <a href="#" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Nyheter</a>
+                    <a href="#" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Om oss</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Öppna meny</span>
+                        <i data-feather="menu" class="block h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div id="hero" class="hero-bg text-white py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-aos="fade-up">
+                <img src="logo.png" alt="Prepping Sverige Logo" class="mx-auto max-w-xs md:max-w-sm lg:max-w-md">
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Products -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-secondary">Rekommendationer</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Våra rekommenderade guider och artiklar för bättre beredskap</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Recommendation 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <img class="h-48 w-full object-cover" src="img/cooking.png" alt="Gasolkök">
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-sm text-primary font-semibold">Utomhuslagning</div>
+                        <a href="#" class="block mt-1 text-lg leading-tight font-medium text-secondary hover:text-primary">Top 10 gasolkök</a>
+                        <p class="mt-2 text-gray-600">En komplett guide till de bästa gasköken för utomhuslagning och överlevnad.</p>
+                        <a href="#" class="mt-4 inline-flex items-center text-primary font-medium hover:text-green-700 transition duration-300">
+                            Läs guide
+                            <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Recommendation 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <img class="h-48 w-full object-cover" src="img/food.png" alt="Matförvaring">
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-sm text-primary font-semibold">MATLAGRING</div>
+                        <a href="mat-familj-artikel.html" class="block mt-1 text-lg leading-tight font-medium text-secondary hover:text-primary">Hur mycket mat behöver en familj på en vecka</a>
+                        <p class="mt-2 text-gray-600">Praktiska råd om portionsstorlekar, förvaring och planering för familjens matbehov.</p>
+                        <a href="mat-familj-artikel.html" class="mt-4 inline-flex items-center text-primary font-medium hover:text-green-700 transition duration-300">
+                            Läs artikel
+                            <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Recommendation 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <img class="h-48 w-full object-cover" src="img/radio.png" alt="Vevradio">
+                    <div class="p-6">
+                        <div class="uppercase tracking-wide text-sm text-primary font-semibold">Kommunikation</div>
+                        <a href="#" class="block mt-1 text-lg leading-tight font-medium text-secondary hover:text-primary">Billigaste och bästa vev-radioapparaterna på marknaden</a>
+                        <p class="mt-2 text-gray-600">Jämförelse av handvevda radioapparater för kommunikation i krislägen.</p>
+                        <a href="#" class="mt-4 inline-flex items-center text-primary font-medium hover:text-green-700 transition duration-300">
+                            Se jämförelse
+                            <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="guider.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-green-700 transition duration-300">
+                    Se alla guider
+                    <i data-feather="chevron-right" class="ml-2 w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guides Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-secondary">Prepping-guider</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Lär dig allt du behöver veta om beredskap i Sverige</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Guide 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="flex-shrink-0 bg-primary p-3 rounded-full">
+                                <i data-feather="home" class="text-white w-6 h-6"></i>
+                            </div>
+                            <h3 class="ml-3 text-lg font-medium text-secondary">Hemma beredskap</h3>
+                        </div>
+                        <p class="text-gray-600">Skapa ett säkert hem för alla situationer. Vi går igenom allt från matförvaring till säkerhetssystem.</p>
+                        <a href="#" class="mt-4 inline-flex items-center text-primary font-medium hover:text-green-700 transition duration-300">
+                            Läs guide
+                            <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Guide 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="flex-shrink-0 bg-primary p-3 rounded-full">
+                                <i data-feather="compass" class="text-white w-6 h-6"></i>
+                            </div>
+                            <h3 class="ml-3 text-lg font-medium text-secondary">Överlevnad i naturen</h3>
+                        </div>
+                        <p class="text-gray-600">Essential färdigheter för att överleva i svensk natur under alla årstider.</p>
+                        <a href="#" class="mt-4 inline-flex items-center text-primary font-medium hover:text-green-700 transition duration-300">
+                            Läs guide
+                            <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Guide 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="flex-shrink-0 bg-primary p-3 rounded-full">
+                                <i data-feather="droplet" class="text-white w-6 h-6"></i>
+                            </div>
+                            <h3 class="ml-3 text-lg font-medium text-secondary">Rent vatten</h3>
+                        </div>
+                        <p class="text-gray-600">Metoder för att säkra rent dricksvatten i krisituationer, både hemma och ute i naturen.</p>
+                        <a href="#" class="mt-4 inline-flex items-center text-primary font-medium hover:text-green-700 transition duration-300">
+                            Läs guide
+                            <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-4">Prenumerera på vårt nyhetsbrev</h2>
+                    <p class="text-primary-100">Få de senaste prepping-tipsen, produktrecensioner och exklusiva erbjudanden direkt till din inkorg.</p>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <form class="flex flex-col sm:flex-row gap-4">
+                        <input type="email" placeholder="Din e-postadress" class="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-accent">
+                        <button type="submit" class="bg-accent hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 whitespace-nowrap">
+                            Prenumerera
+                        </button>
+                    </form>
+                    <p class="mt-2 text-sm text-primary-100">Vi respekterar din integritet. Ingen spam, någonsin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">KRISGUIDEN</h3>
+                    <p class="text-gray-300">Din pålitliga källa för prepping och beredskap i Sverige sedan 2023.</p>
+                    <div class="flex mt-4 space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Länkar</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Hem</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Guider</a></li>
+                        <li><a href="artiklar.html" class="text-gray-300 hover:text-white transition duration-300">Artiklar</a></li>
+                        <li><a href="produkter.html" class="text-gray-300 hover:text-white transition duration-300">Produkter</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Nyheter</a></li>
+                        <li><a href="om.html" class="text-gray-300 hover:text-white transition duration-300">Om oss</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Juridik</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Integritetspolicy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Användarvillkor</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Affiliate-disclaimer</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Cookies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Kontakt</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                            <span>info@krisguiden.nu</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 KRISGUIDEN. Alla rättigheter förbehållna.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize animations and icons
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+        
+        // Vanta.js background for hero section
+        VANTA.GLOBE({
+            el: "#hero",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3a7d44,
+            backgroundColor: 0x0,
+            size: 0.8
+        });
+    </script>
+
+    <!-- Cookie Consent Script -->
+    <script src="cookie-consent.js"></script>
+    <!-- Analytics Script -->
+    <script src="dashboard/track.js"></script>

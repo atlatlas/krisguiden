@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Att vara förälder i kris | KRISGUIDEN</title>
+    <meta name="description" content="Lär dig hantera föräldraskapet under kris och krig - behåll lugnet, fatta kloka beslut och skapa trygghet för dina barn när världen rasar.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3A7D44',
+                        secondary: '#2D3748',
+                        accent: '#E53E3E',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/adult.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Cookie Banner Styles */
+        .cookie-banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .cookie-text {
+            flex: 1;
+        }
+        .cookie-message {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .cookie-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+        .cookie-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .cookie-accept {
+            background-color: #3A7D44;
+            color: white;
+        }
+        .cookie-accept:hover {
+            background-color: #29703d;
+        }
+        .cookie-settings {
+            background-color: #2D3748;
+            color: white;
+        }
+        .cookie-settings:hover {
+            background-color: #4A5568;
+        }
+        .cookie-reject {
+            background-color: transparent;
+            color: white;
+            border: 1px solid #718096;
+        }
+        .cookie-reject:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        @media (max-width: 768px) {
+            .cookie-banner-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            .cookie-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .cookie-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <i data-feather="shield" class="text-primary h-8 w-8"></i>
+                            <span class="ml-2 text-xl font-bold text-secondary">KRISGUIDEN</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="index.html" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Hem</a>
+<a href="guider.html" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Guider</a>
+                    <a href="artiklar.html" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Artiklar</a>
+                    <a href="produkter.html" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Produkter</a>
+                    <a href="nyheter.html" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Nyheter</a>
+                    <a href="om.html" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Om oss</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Öppna meny</span>
+                        <i data-feather="menu" class="block h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-bg text-white py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Att vara förälder i kris</h1>
+                <p class="text-xl md:text-2xl mb-4 max-w-3xl mx-auto">Hur du behåller lugnet när världen rasar – skapa trygghet och styrka för dina barn</p>
+                <div class="w-20 h-1 bg-accent mx-auto mb-8"></div>
+                <div class="text-sm text-gray-200 flex items-center justify-center">
+                    <i data-feather="user" class="w-4 h-4 mr-2"></i>
+                    KRISGUIDEN Redaktion • 2 februari 2025 • 7 min läsning
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article Content -->
+    <article class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="prose prose-lg mx-auto" data-aos="fade-up">
+
+                <!-- Introduction -->
+                <p class="text-lg text-gray-700 mb-8">När världen plötsligt förändras – genom kris, krig eller naturkatastrof – är det lätt att känna panik. Som förälder står du mitt i stormen, och barnen ser allt. De känner din oro, din rädsla och ibland även din förvirring. Det kan kännas överväldigande, men mitt i kaoset finns strategier som kan hjälpa dig att behålla lugnet, fatta kloka beslut och skapa trygghet för din familj.</p>
+
+                <!-- Stay Calm - Your Signal to Children -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">Behåll lugnet – din signal till barnen</h2>
+
+                <p class="mb-6">Barn speglar vuxnas känslor. Om du blir rädd, blir de rädda. Om du visar lugn, känner de trygghet. Därför är ditt eget inre lugn det viktigaste verktyget i krisens stund.</p>
+
+                <div class="bg-blue-50 p-6 rounded-lg mb-8" data-aos="fade-up">
+                    <div class="flex items-start">
+                        <i data-feather="heart" class="text-primary mr-3 w-6 h-6 mt-1"></i>
+                        <div>
+                            <h3 class="font-bold mb-2">Kroppens ankare</h3>
+                            <p class="text-sm">Djupa andetag, korta pauser för att dricka vatten, att räkna till tio – små vardagliga rutiner som fungerar som ankare i stormen.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mb-6">En enkel kvällsrutin, som att läsa tillsammans eller kramas innan sängdags, blir ett ljus i mörkret. Även om du inte känner dig lugn, fungerar det ofta att "fake it till you make it" – att visa styrka i handlingen signalerar trygghet, även när rädslan finns där inuti.</p>
+
+                <!-- Make Decisions Under Pressure -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">Fatta beslut under press</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" data-aos="fade-up">
+                    <div class="bg-green-50 p-6 rounded-lg text-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-3">
+                            <span class="text-white font-bold">1</span>
+                        </div>
+                        <h3 class="font-bold mb-3">Prioritera</h3>
+                        <p class="text-sm">Börja med det mest grundläggande: säkerhet, mat och vatten.</p>
+                    </div>
+                    <div class="bg-orange-50 p-6 rounded-lg text-center">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-3">
+                            <span class="text-white font-bold">2</span>
+                        </div>
+                        <h3 class="font-bold mb-3">Dela upp beslut</h3>
+                        <p class="text-sm">Vad måste göras nu, vad kan vänta? Fokusera på en sak i taget.</p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-lg text-center">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-3">
+                            <span class="text-white font-bold">3</span>
+                        </div>
+                        <h3 class="font-bold mb-3">Håll nere informationsflödet</h3>
+                        <p class="text-sm">Välj en eller två pålitliga källor och håll dig till dem.</p>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 p-6 rounded-lg mb-8" data-aos="fade-up">
+                    <div class="flex items-start">
+                        <i data-feather="target" class="text-primary mr-3 w-6 h-6 mt-1"></i>
+                        <div>
+                            <h3 class="font-bold mb-2">Mental checklista</h3>
+                            <p class="text-sm">Använd denna enkla guide: Säkerhet → Mat/Vatten → Kommunikation → Vila. Genom att fokusera på en sak i taget blir världen mer hanterbar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Show Strength Without Denying Feelings -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">Visa styrka utan att förneka känslor</h2>
+
+                <p class="mb-6">Styrka handlar inte om att aldrig vara rädd – styrka är att kunna hantera rädslan och agera ändå. Tala med barnen på deras nivå: "Jag är orolig också, men vi klarar det tillsammans."</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8" data-aos="fade-up">
+                    <div class="bg-indigo-50 p-6 rounded-lg">
+                        <h3 class="font-bold mb-3 flex items-center">
+                            <i data-feather="users" class="text-primary mr-2 w-5 h-5"></i>
+                            Ditt kroppsspråk
+                        </h3>
+                        <p class="text-sm">Stå stadigt, tala lugnt och håll ögonkontakt. Att visa närvaro, även i oro, ger barnen känsla av kontroll.</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h3 class="font-bold mb-3 flex items-center">
+                            <i data-feather="eye" class="text-primary mr-2 w-5 h-5"></i>
+                            Ärlighetens kraft
+                        </h3>
+                        <p class="text-sm">Du behöver inte ha alla svar, men att vara ärlig skapar tillit. "Vi vet inte exakt vad som kommer att hända, men vi är förberedda."</p>
+                    </div>
+                </div>
+
+                <!-- Managing Your Own Anger and Worry -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">Hantera din egen ilska och oro</h2>
+
+                <p class="mb-6">Känslor av rädsla, ilska eller frustration är naturliga och nödvändiga – det handlar inte om att förneka dem, utan att hantera dem.</p>
+
+                <div class="bg-red-50 p-6 rounded-lg mb-8" data-aos="fade-up">
+                    <h3 class="font-bold mb-4 text-red-800">Beprövade strategier</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="wind" class="text-red-600 mr-3 w-5 h-5 mt-0.5"></i>
+                            <span>Kort mindfulness eller djupa andetag för att bearbeta känslor</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="move" class="text-red-600 mr-3 w-5 h-5 mt-0.5"></i>
+                            <span>Fysisk aktivitet för att släppa spänningar</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="book-open" class="text-red-600 mr-3 w-5 h-5 mt-0.5"></i>
+                            <span>Skriv dagbok för att organisera tankar och känslor</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="users" class="text-red-600 mr-3 w-5 h-5 mt-0.5"></i>
+                            <span>Prata med andra vuxna – delad oro blir lättare att bära</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <p class="mb-8">Att prata med andra vuxna, om det är möjligt, är också viktigt. Delad oro blir lättare att bära, och det ger dig energi att fortsätta vara stabil för barnen.</p>
+
+                <!-- Find Joy Even in Catastrophe -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">Hitta glädjen även i katastrofen</h2>
+
+                <p class="mb-6">Mitt i mörkret finns alltid små ljusglimtar. Små stunder av lek, sånger, pyssel eller berättelser skapar motståndskraft och känslan av normalitet.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" data-aos="fade-up">
+                    <div class="bg-pink-50 p-6 rounded-lg text-center">
+                        <i data-feather="smile" class="text-primary mx-auto w-8 h-8 mb-3"></i>
+                        <h3 class="font-bold mb-3">Lek och sånger</h3>
+                        <p class="text-sm">Små stunder som påminner om livets glädje</p>
+                    </div>
+                    <div class="bg-cyan-50 p-6 rounded-lg text-center">
+                        <i data-feather="scissors" class="text-primary mx-auto w-8 h-8 mb-3"></i>
+                        <h3 class="font-bold mb-3">Pyssel och kreativitet</h3>
+                        <p class="text-sm">Hjälper barn att bearbeta känslor på ett konstruktivt sätt</p>
+                    </div>
+                    <div class="bg-lime-50 p-6 rounded-lg text-center">
+                        <i data-feather="sun" class="text-primary mx-auto w-8 h-8 mb-3"></i>
+                        <h3 class="font-bold mb-3">Berättelser</h3>
+                        <p class="text-sm">Gemensamma stunder som bygger närhet och trygghet</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg mb-8" data-aos="fade-up">
+                    <div class="flex items-start">
+                        <i data-feather="star" class="text-primary mr-3 w-6 h-6 mt-1"></i>
+                        <div>
+                            <h3 class="font-bold mb-2">Humorns läkande kraft</h3>
+                            <p class="text-sm">Humor är inte förringande – den är ett verktyg för överlevnad. Fokusera på det som fortfarande är möjligt och identifiera små vinster varje dag.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conclusion -->
+                <div class="bg-primary text-white p-8 rounded-lg mb-8" data-aos="fade-up">
+                    <h2 class="text-2xl font-bold mb-4">Slutsats – du har redan styrkan</h2>
+                    <p class="mb-4">Det finns inga perfekta föräldrar i kris. Du kommer att göra misstag, känna rädsla och tvivla. Men när du är närvarande, visar styrka och känslor på ett medvetet sätt, skapar du trygghet och hopp.</p>
+                    <p class="mb-4">Att hålla handen genom rädslan, att skratta mitt i mörkret och att ge kärlek trots allt – det är styrka. Och det är det som barnen minns.</p>
+                </div>
+
+                <!-- Relaterade artiklar -->
+                <div class="mt-16" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold text-secondary mb-8 text-center">Relaterade artiklar</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <a href="artikel-prata-med-barn.html" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 block">
+                            <h4 class="font-bold mb-2">Att prata med barn om kris eller krig</h4>
+                            <p class="text-sm text-gray-600 mb-3">Vägledning för föräldrar om kommunikation i svåra tider</p>
+                            <span class="text-primary font-medium">Läs artikeln →</span>
+                        </a>
+                        <a href="artikel-vad-historien-lar-oss.html" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 block">
+                            <h4 class="font-bold mb-2">Vad historien lär oss om att överleva</h4>
+                            <p class="text-sm text-gray-600 mb-3">Lärdomar från historiska kriser för dagens utmaningar</p>
+                            <span class="text-primary font-medium">Läs artikeln →</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Back to Articles Link -->
+                <div class="text-center mt-12" data-aos="fade-up">
+                    <a href="artiklar.html" class="inline-flex items-center bg-primary text-white px-8 py-3 rounded-lg hover:bg-green-700 transition duration-300">
+                        <i data-feather="arrow-left" class="mr-2 w-5 h-5"></i>
+                        Tillbaka till artiklar
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">KRISGUIDEN</h3>
+                    <p class="text-gray-300">Din pålitliga källa för prepping och beredskap i Sverige sedan 2023.</p>
+                    <div class="flex mt-4 space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://instagram.com/krisguiden" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Länkar</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition duration-300">Hem</a></li>
+                        <li><a href="guider.html" class="text-gray-300 hover:text-white transition duration-300">Guider</a></li>
+                        <li><a href="artiklar.html" class="text-gray-300 hover:text-white transition duration-300">Artiklar</a></li>
+                        <li><a href="produkter.html" class="text-gray-300 hover:text-white transition duration-300">Produkter</a></li>
+                        <li><a href="nyheter.html" class="text-gray-300 hover:text-white transition duration-300">Nyheter</a></li>
+                        <li><a href="om.html" class="text-gray-300 hover:text-white transition duration-300">Om oss</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Juridik</h3>
+                    <ul class="space-y-2">
+                        <li><a href="integritetspolicy.html" class="text-gray-300 hover:text-white transition duration-300">Integritetspolicy</a></li>
+                        <li><a href="användarvillkor.html" class="text-gray-300 hover:text-white transition duration-300">Användarvillkor</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Affiliate-disclaimer</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Cookies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Kontakt</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                            <span>info@krisguiden.nu</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 KRISGUIDEN. Alla rättigheter förbehållna.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize animations and icons
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+
+    <!-- Cookie Consent Script -->
+    <script src="cookie-consent.js"></script>
+</body>
+</html>

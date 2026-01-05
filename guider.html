@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guider - KRISGUIDEN</title>
+    <meta name="description" content="Kompletta guider om krisberedskap och överlevnad. Från hemsäkerhet till utomhusöverlevnad - lär dig allt du behöver veta.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3A7D44',
+                        secondary: '#2D3748',
+                        accent: '#E53E3E',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('banners/survival_guides.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .guide-super { background-color: #FFD700; color: #2D3748; }
+        .guide-advanced { background-color: #FF6B35; color: white; }
+        .guide-beginner { background-color: #4CAF50; color: white; }
+        .guide-intermediate { background-color: #2196F3; color: white; }
+
+        /* Cookie Banner Styles */
+        .cookie-banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .cookie-text {
+            flex: 1;
+        }
+        .cookie-message {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .cookie-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+        .cookie-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .cookie-accept {
+            background-color: #3A7D44;
+            color: white;
+        }
+        .cookie-accept:hover {
+            background-color: #29703d;
+        }
+        .cookie-settings {
+            background-color: #2D3748;
+            color: white;
+        }
+        .cookie-settings:hover {
+            background-color: #4A5568;
+        }
+        .cookie-reject {
+            background-color: transparent;
+            color: white;
+            border: 1px solid #718096;
+        }
+        .cookie-reject:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        @media (max-width: 768px) {
+            .cookie-banner-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            .cookie-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .cookie-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <div class="hero-bg text-white py-20 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Överlevnadsguider</h1>
+                <p class="text-xl md:text-2xl mb-4 max-w-4xl mx-auto">Kompletta guider för krisberedskap och överlevnad. Från grundläggande kunskaper till avancerade tekniker.</p>
+                <div class="w-20 h-1 bg-accent mx-auto mb-8"></div>
+                <div class="text-sm text-gray-200">Guider systematiskt • Alla nivåer • Uppdateras löpande</div>
+
+                <!-- Search Bar -->
+                <div class="mt-12 max-w-md mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <input type="text" id="searchInput" placeholder="Sök guider..." class="w-full px-6 py-4 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-accent shadow-lg">
+                        <button class="absolute right-3 top-3 p-2 bg-accent rounded-full hover:bg-red-700 transition duration-300">
+                            <i data-feather="search" class="w-5 h-5 text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Navigation -->
+    <section class="py-8 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-lg font-semibold text-secondary">Utforska områden</h2>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3">
+                <button class="guide-category-filter active px-4 py-2 text-sm bg-primary text-white rounded-full hover:bg-green-700 transition" data-category="alla">Alla</button>
+                <button class="guide-category-filter px-4 py-2 text-sm bg-gray-100 text-secondary rounded-full hover:bg-primary hover:text-white transition" data-category="hemsäkerhet">Hemsäkerhet</button>
+                <button class="guide-category-filter px-4 py-2 text-sm bg-gray-100 text-secondary rounded-full hover:bg-primary hover:text-white transition" data-category="utomhus">Utomhusöverlevnad</button>
+                <button class="guide-category-filter px-4 py-2 text-sm bg-gray-100 text-secondary rounded-full hover:bg-primary hover:text-white transition" data-category="vatten">Rengöring & Vatten</button>
+                <button class="guide-category-filter px-4 py-2 text-sm bg-gray-100 text-secondary rounded-full hover:bg-primary hover:text-white transition" data-category="medicin">Fyra Hjälpen</button>
+                <button class="guide-category-filter px-4 py-2 text-sm bg-gray-100 text-secondary rounded-full hover:bg-primary hover:text-white transition" data-category="kommunikation">Kommunikation</button>
+                <button class="guide-category-filter px-4 py-2 text-sm bg-gray-100 text-secondary rounded-full hover:bg-primary hover:text-white transition" data-category="beredskap">Krisberedskap</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Guides -->
+    <section class="py-16 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-4">Rekommenderade Guider</h2>
+                <p class="text-primary-100 max-w-2xl mx-auto">Våra mest eftertraktade guider för att börja din krisberedelse</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Featured 1 -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center mr-3">
+                            <i data-feather="home" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Hemsäkerhet & Familjeplan</h3>
+                    </div>
+                    <p class="text-primary-100 mb-4">Komplett guide för att säkra hemmet och skapa familjens krisplan</p>
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 bg-accent text-white text-xs rounded-full">Nybörjare</span>
+                        <span class="text-sm">15 min</span>
+                    </div>
+                    <a href="#hemsäkerhet-guider" class="mt-4 inline-flex items-center text-accent hover:text-white font-medium">
+                        Läs guide
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Featured 2 -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center mr-3">
+                            <i data-feather="compass" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Utomhusöverlevnad</h3>
+                    </div>
+                    <p class="text-primary-100 mb-4">Esentiella färdigheter för överlevnad i svensk natur under alla årstider</p>
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 bg-accent text-white text-xs rounded-full">Mellanliggande</span>
+                        <span class="text-sm">25 min</span>
+                    </div>
+                    <a href="#utomhus-guider" class="mt-4 inline-flex items-center text-accent hover:text-white font-medium">
+                        Läs guide
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Featured 3 -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center mr-3">
+                            <i data-feather="droplet" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Rengöring av vatten</h3>
+                    </div>
+                    <p class="text-primary-100 mb-4">Metoder för att säkra rent dricksvatten i krisituationer</p>
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 bg-accent text-white text-xs rounded-full">Nybörjare</span>
+                        <span class="text-sm">12 min</span>
+                    </div>
+                    <a href="#vatten-guider" class="mt-4 inline-flex items-center text-accent hover:text-white font-medium">
+                        Läs guide
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guides Grid -->
+    <section class="py-16 bg-gray-50" id="guideContainer">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="guidesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Guides will be loaded via JS -->
+            </div>
+            <div id="noResults" class="text-center py-16 hidden">
+                <div class="max-w-md mx-auto">
+                    <i data-feather="search" class="w-16 h-16 text-gray-400 mx-auto mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-secondary mb-2">Inga guider hittades</h3>
+                    <p class="text-gray-600">Prova andra sökord eller kategorier</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Navigation Anchors (hidden) -->
+    <div class="hidden">
+        <div id="hemsäkerhet-guider"></div>
+        <div id="utomhus-guider"></div>
+        <div id="vatten-guider"></div>
+        <div id="medicin-guider"></div>
+        <div id="kommunikation-guider"></div>
+        <div id="beredskap-guider"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">KRISGUIDEN</h3>
+                    <p class="text-gray-300">Din pålitliga källa för prepping och beredskap i Sverige sedan 2023.</p>
+                    <div class="flex mt-4 space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://instagram.com/krisguiden" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Länkar</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition duration-300">Hem</a></li>
+                        <li><a href="guider.html" class="text-gray-300 hover:text-white transition duration-300">Guider</a></li>
+                        <li><a href="artiklar.html" class="text-gray-300 hover:text-white transition duration-300">Artiklar</a></li>
+                        <li><a href="produkter.html" class="text-gray-300 hover:text-white transition duration-300">Produkter</a></li>
+                        <li><a href="nyheter.html" class="text-gray-300 hover:text-white transition duration-300">Nyheter</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Om oss</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Juridik</h3>
+                    <ul class="space-y-2">
+                        <li><a href="integritetspolicy.html" class="text-gray-300 hover:text-white transition duration-300">Integritetspolicy</a></li>
+                        <li><a href="användarvillkor.html" class="text-gray-300 hover:text-white transition duration-300">Användarvillkor</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Affiliate-disclaimer</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Cookies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Kontakt</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                            <span>info@krisguiden.nu</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 KRISGUIDEN. Alla rättigheter förbehållna.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize animations and icons
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Example guide data - easily add/remove guides here
+        const guides = [
+            // Hemberedskap Guide
+            {
+                id: 1,
+                title: 'Hemberedskap',
+                category: 'hemsäkerhet',
+                subcategory: 'Grundläggande',
+                excerpt: 'Skapa ett säkert hem för alla situationer. Vi går igenom allt från matförvaring till säkerhetssystem och familjens krisplan.',
+                difficulty: 'beginner',
+                readTime: '15 min',
+                featured: true,
+                link: 'hemberedskap-guide.html',
+                content: 'Komplett guide för hemsäkerhet och krisberedskap. Lär dig skapa ett säkert hem med matförråd, säkerhetssystem och familjeplan.',
+                tag: 'Rekommenderad'
+            },
+            {
+                id: 2,
+                title: 'Hemsäkerhet & Kravallerberedskap',
+                category: 'hemsäkerhet',
+                subcategory: 'Avancerad',
+                excerpt: 'Skapa ett tryggt hem genom att förstå din mest sårbara punkt. Vi går igenom grundläggande säkerhetsprinciper för att skydda din familj under kris och oroligheter.',
+                difficulty: 'intermediate',
+                readTime: '12 min',
+                featured: false,
+                content: 'Komplett guide om hemmakt och hur du skapar ett säkert hem för alla situationer.'
+            },
+            {
+                id: 3,
+                title: 'Hur mycket mat behöver en familj på en vecka',
+                category: 'beredskap',
+                subcategory: 'Matplanering',
+                excerpt: 'Praktiska råd om matförvaring för familjer i krissituationer. Lär dig planera rätt mängd mat för en vecka och hur du bygger upp ett säkert förråd.',
+                difficulty: 'beginner',
+                readTime: '10 min',
+                featured: true,
+                link: 'mat-familj-artikel.html',
+                content: 'Beräkna ditt hushålls energibehov och bygg upp rätt förråd för 7 dagar krisberedskap.',
+                tag: 'Behovskalkylator'
+            }
+        ];
+
+        let currentCategory = 'alla';
+        let currentSearch = '';
+
+        // Initialize page
+        function initGuidesPage() {
+            loadGuides(guides);
+            setupEventListeners();
+        }
+
+        // Load and display guides
+        function loadGuides(guidesToShow) {
+            const grid = document.getElementById('guidesGrid');
+            grid.innerHTML = '';
+
+            if (guidesToShow.length === 0) {
+                document.getElementById('noResults').classList.remove('hidden');
+                return;
+            }
+
+            document.getElementById('noResults').classList.add('hidden');
+
+            guidesToShow.forEach((guide, index) => {
+                const guideCard = createGuideCard(guide, index);
+                grid.appendChild(guideCard);
+            });
+
+            feather.replace();
+        }
+
+        // Create guide card
+        function createGuideCard(guide, delay) {
+            const card = document.createElement('div');
+            card.className = `bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover`;
+            card.setAttribute('data-aos', 'fade-up');
+            card.setAttribute('data-aos-delay', delay * 100);
+
+            let difficultyClass = 'guide-' + guide.difficulty;
+            let difficultyText = guide.difficulty === 'beginner' ? 'Nybörjare' :
+                                guide.difficulty === 'intermediate' ? 'Mellanliggande' : 'Avancerad';
+
+            card.innerHTML = `
+                <div class="p-6">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <div class="uppercase tracking-wide text-xs text-primary font-semibold mb-2">${guide.subcategory}</div>
+                            <h3 class="text-lg font-bold text-secondary leading-tight mb-2">${guide.title}</h3>
+                        </div>
+                        <div class="ml-4 flex-shrink-0 flex flex-col gap-2">
+                            ${guide.tag ? `<div class="bg-blue-600 text-white text-xs px-2 py-1 rounded-full text-center">${guide.tag}</div>` : ''}
+                            <div class="text-xs text-white px-2 py-1 rounded-full text-center ${difficultyClass}">
+                                ${difficultyText}
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-600 mb-4 leading-relaxed">${guide.excerpt}</p>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i data-feather="clock" class="w-4 h-4 mr-1"></i>
+                            ${guide.readTime}
+                        </div>
+                        ${guide.link ? `<a href="${guide.link}" class="inline-flex items-center px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-green-700 transition duration-300">
+                            <i data-feather="book-open" class="w-4 h-4 mr-2"></i>
+                            Läs guide
+                        </a>` : `<button class="inline-flex items-center px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-green-700 transition duration-300">
+                            <i data-feather="book-open" class="w-4 h-4 mr-2"></i>
+                            Läs guide
+                        </button>`}
+                    </div>
+                </div>
+            `;
+
+            return card;
+        }
+
+        // Event listeners
+        function setupEventListeners() {
+            // Search input
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', (e) => {
+                currentSearch = e.target.value.toLowerCase();
+                filterGuides();
+            });
+
+            // Category filter buttons
+            const categoryButtons = document.querySelectorAll('.guide-category-filter');
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Reset active state
+                    categoryButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.classList.add('bg-gray-100', 'text-secondary');
+                        btn.classList.remove('bg-primary', 'text-white');
+                    });
+
+                    button.classList.add('active', 'bg-primary', 'text-white');
+                    button.classList.remove('bg-gray-100', 'text-secondary');
+
+                    currentCategory = button.getAttribute('data-category');
+                    filterGuides();
+                });
+            });
+        }
+
+        // Filter guides
+        function filterGuides() {
+            let filtered = guides;
+
+            // Filter by category
+            if (currentCategory !== 'alla') {
+                filtered = filtered.filter(guide => guide.category === currentCategory);
+            }
+
+            // Filter by search
+            if (currentSearch.trim() !== '') {
+                filtered = filtered.filter(guide =>
+                    guide.title.toLowerCase().includes(currentSearch) ||
+                    guide.excerpt.toLowerCase().includes(currentSearch) ||
+                    guide.subcategory.toLowerCase().includes(currentSearch) ||
+                    guide.category.toLowerCase().includes(currentSearch)
+                );
+            }
+
+            loadGuides(filtered);
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', initGuidesPage);
+
+        // Update feather replace for dynamic elements
+        feather.replace();
+    </script>
+
+    <!-- Cookie Consent Script -->
+    <script src="cookie-consent.js"></script>
+    <!-- Navbar Script -->
+    <script src="nav.js"></script>
+    <!-- Analytics Script -->
+    <script src="dashboard/track.js"></script>
+</body>
+</html>

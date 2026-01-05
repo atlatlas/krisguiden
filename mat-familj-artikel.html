@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hur mycket mat behöver en familj på en vecka | KRISGUIDEN</title>
+    <meta name="description" content="Praktiska råd om matförvaring för familjer i krissituationer. Lär dig planera rätt mängd mat för en vecka och hur du bygger upp ett säkert förråd.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3A7D44',
+                        secondary: '#2D3748',
+                        accent: '#E53E3E',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/food.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Cookie Banner Styles */
+        .cookie-banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .cookie-text {
+            flex: 1;
+        }
+        .cookie-message {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .cookie-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+        .cookie-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .cookie-accept {
+            background-color: #3A7D44;
+            color: white;
+        }
+        .cookie-accept:hover {
+            background-color: #29703d;
+        }
+        .cookie-settings {
+            background-color: #2D3748;
+            color: white;
+        }
+        .cookie-settings:hover {
+            background-color: #4A5568;
+        }
+        .cookie-reject {
+            background-color: transparent;
+            color: white;
+            border: 1px solid #718096;
+        }
+        .cookie-reject:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        @media (max-width: 768px) {
+            .cookie-banner-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            .cookie-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .cookie-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <div class="hero-bg text-white py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Hur mycket mat behöver en familj på en vecka</h1>
+                <p class="text-xl md:text-2xl mb-4 max-w-3xl mx-auto">Praktiska råd om matförvaring och beredskapsplanering för familjer i krissituationer</p>
+                <div class="w-20 h-1 bg-accent mx-auto(mb-8)"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article Content -->
+    <article class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="prose prose-lg mx-auto" data-aos="fade-up">
+
+                <!-- Introduction -->
+                <p class="text-lg text-gray-700 mb-8">När vardagen fungerar som vanligt tänker vi sällan på hur beroende vi är av välfyllda matbutiker. Men vid ett längre strömavbrott, en störning i leveranserna eller annan krissituation kan tillgången på mat snabbt bli osäker. Därför rekommenderar <strong>Myndigheten för samhällsskydd och beredskap (MSB)</strong> att varje hushåll ska kunna klara sig i minst en vecka utan stöd från samhället.</p>
+
+                <p class="text-lg text-gray-700 mb-12">I den här artikeln tittar vi närmare på hur mycket mat en familj på två vuxna och två barn i åldern 5–15 år kan behöva.</p>
+
+                <!-- Energy Needs Section -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">Energibehov i en kris</h2>
+
+                <p class="mb-6">Ett normalt energibehov varierar, men ungefärliga riktvärden är:</p>
+
+                <div class="bg-gray-50 p-6 rounded-lg mb-8" data-aos="fade-up" data-aos-delay="100">
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i data-feather="user" class="text-primary mr-3 w-5 h-5"></i>
+                            <span><strong>Vuxen:</strong> ca 2 000–2 500 kcal/dag</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="users" class="text-primary mr-3 w-5 h-5"></i>
+                            <span><strong>Barn 5–10 år:</strong> ca 1 600–2 000 kcal/dag</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="users" class="text-primary mr-3 w-5 h-5"></i>
+                            <span><strong>Barn 11–15 år:</strong> ca 2 000–2 400 kcal/dag</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <p class="mb-8"><strong>För en familj med två vuxna och två barn blir det alltså i genomsnitt cirka 8 000–9 000 kcal per dag. På en vecka motsvarar det cirka 60 000–65 000 kcal.</strong></p>
+
+                <!-- Suitable Food Section -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">Vilken mat är lämplig?</h2>
+
+                <p class="mb-6">Vid en kris är det viktigt med mat som:</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-green-50 p-6 rounded-lg text-center">
+                        <i data-feather="package" class="text-primary mx-auto w-8 h-8 mb-3"></i>
+                        <h3 class="font-bold mb-2">Håller länge utan kyl</h3>
+                        <p class="text-sm">Konserver, torrvaror</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-lg text-center">
+                        <i data-feather="zap" class="text-primary mx-auto w-8 h-8 mb-3"></i>
+                        <h3 class="font-bold mb-2">Enkel att tillaga</h3>
+                        <p class="text-sm">Kan ätas kall eller kräver bara varmt vatten</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-lg text-center">
+                        <i data-feather="heart" class="text-primary mx-auto w-8 h-8 mb-3"></i>
+                        <h3 class="font-bold mb-2">Ger energi och näring</h3>
+                        <p class="text-sm">Kolhydrater för energi, protein för mättnad</p>
+                    </div>
+                </div>
+
+                <!-- Example Foods -->
+                <h3 class="text-2xl font-bold text-secondary mb-4">Exempel på bra basvaror</h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12" data-aos="fade-up">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-bold mb-3">Kolhydrater för energi:</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Ris, pasta, bulgur, couscous</li>
+                            <li>• Havregryn, knäckebröd, kex</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-bold mb-3">Protein och näring:</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Konserverad bönor, linser, ärtor</li>
+                            <li>• Konserverat kött och fisk</li>
+                            <li>• Konserverade grönsaker och frukt</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-bold mb-3">Energi och snacks:</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Nötter, frön, jordnötssmör</li>
+                            <li>• Torkad frukt, müsli, choklad</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-bold mb-3">Dryck och tillagning:</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Pulvermjölk, havredryck</li>
+                            <li>• Olja, margarin för energi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Weekly Ration Example -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">Exempel på veckoranson för en familj</h2>
+
+                <p class="mb-6">En möjlig fördelning för att nå upp till familjens behov kan se ut så här:</p>
+
+                <div class="bg-primary text-white p-8 rounded-lg mb-12" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Föreslagen vecka-ranson</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <dl class="space-y-4">
+                            <div>
+                                <dt class="font-bold text-lg">10–12 kg</dt>
+                                <dd class="text-green-100">Kolhydrater (ris, pasta, havregryn, knäckebröd)</dd>
+                            </div>
+                            <div>
+                                <dt class="font-bold text-lg">6–8 kg</dt>
+                                <dd class="text-green-100">Konserverat protein (kött, fisk, bönor, linser)</dd>
+                            </div>
+                            <div>
+                                <dt class="font-bold text-lg">3–4 liter</dt>
+                                <dd class="text-green-100">Lagringsbar mjölk/havredryck</dd>
+                            </div>
+                        </dl>
+                        <dl class="space-y-4">
+                            <div>
+                                <dt class="font-bold text-lg">2–3 kg</dt>
+                                <dd class="text-green-100">Nötter, frön och torkad frukt</dd>
+                            </div>
+                            <div>
+                                <dt class="font-bold text-lg">1–2 liter</dt>
+                                <dd class="text-green-100">Olja, smör eller margarin</dd>
+                            </div>
+                            <div>
+                                <dt class="font-bold text-lg">84 liter</dt>
+                                <dd class="text-green-100">Vatten (3 liter per person per dag)</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+                <!-- Calculator Integration -->
+                <div class="my-16" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2 text-center">🎯 Beräkna ert specifik behov</h2>
+
+                    <p class="text-center text-gray-700 mb-8">Använd vår interaktiva kalkylator för att få en mer exakt beräkning baserad på er familjs unika behov.</p>
+
+                    <!-- Embedded Calculator -->
+                    <div class="bg-gray-100 p-8 rounded-xl border-2 border-gray-200" id="calculator-container">
+                        <h3 class="text-2xl font-bold text-secondary mb-4">Beredskapskalkylator — mat & vatten</h3>
+                        <p class="text-gray-600 mb-6">Ange hushållets medlemmar (med ålder) och antal dagar. Kalkylatorn ger totalsiffror och ett enkelt förslag på matmängder.</p>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-gray-800 mb-2">Antal dagar att planera för</label>
+                            <input id="days" type="number" min="1" value="7" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" />
+                        </div>
+
+                        <h4 class="text-lg font-bold text-secondary mb-3">Personer i hushållet</h4>
+                        <div id="persons" class="mb-4"></div>
+
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <button id="addAdult" class="bg-primary hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">Lägg till vuxen</button>
+                            <button id="addChild" class="bg-primary hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">Lägg till barn</button>
+                            <button id="clear" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">Rensa</button>
+                        </div>
+
+                        <button id="calc" class="bg-accent hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 mb-8">Beräkna behov</button>
+
+                        <div id="results" class="bg-white p-6 rounded-lg border border-gray-200" style="display:none">
+                            <h4 class="text-xl font-bold text-secondary mb-4">Resultat</h4>
+                            <table class="w-full border-collapse mb-6">
+                                <tbody>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-2 px-4 font-semibold bg-gray-50">Totalt energibehov (kcal/dag)</td>
+                                        <td class="py-2 px-4" id="kcalPerDay"></td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-2 px-4 font-semibold bg-gray-50">Totalt energibehov (kcal för perioden)</td>
+                                        <td class="py-2 px-4" id="kcalTotal"></td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-2 px-4 font-semibold bg-gray-50">Vattenbehov (liter totalt)</td>
+                                        <td class="py-2 px-4" id="waterTotal"></td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-2 px-4 font-semibold bg-gray-50">Rekommenderad fördelning (energi%)</td>
+                                        <td class="py-2 px-4">Kolhydrater ~50%, Protein/konserver ~25%, Fett/snacks ~15%, Övrigt ~10%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4 class="text-lg font-bold text-secondary mb-4">Föreslagen mängd mat (avrundat)</h4>
+                            <table class="w-full border-collapse">
+                                <tbody>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-2 px-4 font-semibold bg-gray-50">Kolhydrater (ris/pasta/bröd) — vikt</td>
+                                        <td class="py-2 px-4" id="carbsKg"></td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-2 px-4 font-semibold bg-gray-50">Konserver / protein (kg)</td>
+                                        <td class="py-2 px-4" id="proteinKg"></td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-2 px-4 font-semibold bg-gray-50">Nötter & energirika snacks (kg)</td>
+                                        <td class="py-2 px-4" id="nutsKg"></td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-2 px-4 font-semibold bg-gray-50">Matolja (liter)</td>
+                                        <td class="py-2 px-4" id="oilL"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smart Planning -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">Planera smart</h2>
+
+                <div class="bg-blue-50 p-8 rounded-lg mb-12" data-aos="fade-up">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i data-feather="lightbulb" class="text-primary mr-3 w-6 h-6"></i>
+                        Viktiga råd för matplanering
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-primary mr-3 w-5 h-5 mt-0.5"></i>
+                            <span>Räkna på vad familjen faktiskt äter idag och bygg upp ett roterande matförråd</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-primary mr-3 w-5 h-5 mt-0.5"></i>
+                            <span>Välj livsmedel som barnen tycker om – i en stressad situation är det viktigt att maten känns trygg och bekant</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-primary mr-3 w-5 h-5 mt-0.5"></i>
+                            <span>Komplettera med stormkök eller annan möjlighet att värma vatten/mat</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-primary mr-3 w-5 h-5 mt-0.5"></i>
+                            <span>Bygg upp lagret gradvis – börja med 3 dagar och utöka till 7 dagar</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Conclusion -->
+                <div id="conclusion" class="bg-primary text-white p-8 rounded-lg mb-12" data-aos="fade-up">
+                    <h2 class="text-2xl font-bold mb-4">Slutsats</h2>
+                    <p class="mb-4"><strong>För en familj på två vuxna och två barn behövs ungefär 60 000–65 000 kcal mat och 80+ liter vatten för en vecka.</strong></p>
+                    <p class="mb-6">Genom att bygga upp ett enkelt och hållbart förråd av torrvaror, konserver och snacks kan familjen klara en krissituation betydligt bättre – och känna trygghet i att basbehoven är säkrade.</p>
+                    <p><em>Kom ihåg att MSB rekommenderar att alla hushåll ska vara beredda att klara sig själva i minst 3–7 dagar.</em></p>
+                </div>
+
+                <!-- Dynamic Conclusion (hidden by default) -->
+                <div id="dynamicConclusion" class="bg-primary text-white p-8 rounded-lg mb-12" style="display: none;" data-aos="fade-up">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center">
+                        <i data-feather="users" class="w-6 h-6 mr-2"></i>
+                        Slutsats
+                    </h2>
+                    <p class="mb-4"><strong id="dynamicKcalText">För er familj behövs ungefär 60 000–65 000 kcal mat och 80+ liter vatten för en vecka.</strong></p>
+                    <p class="mb-6">Genom att bygga upp ett enkelt och hållbart förråd av torrvaror, konserver och snacks kan familjen klara en krissituation betydligt bättre – och känna trygghet i att basbehoven är säkrade.</p>
+                    <p><em>Kom ihåg att MSB rekommenderar att alla hushåll ska vara beredda att klara sig själva i minst 3–7 dagar.</em></p>
+                </div>
+
+                <!-- Relaterade artiklar -->
+                <div class="mt-16" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold text-secondary mb-8 text-center">Relaterade artiklar</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <a href="artikel-vara-forader-i-kris.html" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 block">
+                            <h4 class="font-bold mb-2">Att vara förälder i kris</h4>
+                            <p class="text-sm text-gray-600 mb-3">Hur du behåller lugnet och skapar trygghet för dina barn</p>
+                            <span class="text-primary font-medium">Läs artikeln →</span>
+                        </a>
+                        <a href="nyhet-saker-matforsorjning.html" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 block">
+                            <h4 class="font-bold mb-2">Säker matförsörjning</h4>
+                            <p class="text-sm text-gray-600 mb-3">Fröbanker, odling och frystorkade livsmedel</p>
+                            <span class="text-primary font-medium">Läs artikel →</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">KRISGUIDEN</h3>
+                    <p class="text-gray-300">Din pålitliga källa för prepping och beredskap i Sverige sedan 2023.</p>
+                    <div class="flex mt-4 space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Länkar</h3>
+                    <ul class="space-y-2">
+                        <li><a href="preppingsverige.html" class="text-gray-300 hover:text-white transition duration-300">Hem</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Guider</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Produkter</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Nyheter</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Om oss</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Juridik</h3>
+                    <ul class="space-y-2">
+                        <li><a href="integritetspolicy.html" class="text-gray-300 hover:text-white transition duration-300">Integritetspolicy</a></li>
+                        <li><a href="användarvillkor.html" class="text-gray-300 hover:text-white transition duration-300">Användarvillkor</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Affiliate-disclaimer</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Cookies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Kontakt</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                            <span>info@krisguiden.nu</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 KRISGUIDEN. Alla rättigheter förbehållna.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Calculator JavaScript from matgenerator.html
+        const ENERGY = {
+            adult: 2250,
+            child_5_6: 1400,
+            child_7_10: 1700,
+            child_11_13: 2000,
+            child_14_15: 2200
+        };
+
+        const WATER_PER_PERSON_PER_DAY = 3;
+        const DENSITY = {
+            carbs_kcal_per_100g: 360,
+            protein_kcal_per_100g: 200,
+            nuts_kcal_per_100g: 600,
+            oil_kcal_per_l: 9000
+        };
+
+        const ALLOCATION = {
+            carbs: 0.50,
+            protein: 0.25,
+            fats: 0.15,
+            other: 0.10
+        };
+
+        const personsDiv = document.getElementById('persons');
+
+        function createPersonElement(type){
+            const wrapper = document.createElement('div');
+            wrapper.className = 'person-line flex items-center gap-4 p-4 bg-white rounded-lg border mb-3';
+            const label = document.createElement('div');
+            label.className = 'font-semibold';
+            label.textContent = type === 'adult' ? 'Vuxen' : 'Barn (5–15 år)';
+            const ageInput = document.createElement('input');
+            ageInput.type = 'number';
+            ageInput.min = (type === 'adult') ? 18 : 5;
+            ageInput.max = (type === 'adult') ? 120 : 15;
+            ageInput.value = (type === 'adult') ? 35 : 10;
+            ageInput.className = 'px-3 py-2 border border-gray-300 rounded-lg w-20 focus:ring-2 focus:ring-primary';
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'Ta bort';
+            removeBtn.className = 'bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-3 rounded-lg transition duration-300';
+            removeBtn.addEventListener('click', ()=> wrapper.remove());
+            wrapper.appendChild(label);
+            wrapper.appendChild(ageInput);
+            wrapper.appendChild(removeBtn);
+            personsDiv.appendChild(wrapper);
+        }
+
+        document.getElementById('addAdult').addEventListener('click', ()=> createPersonElement('adult'));
+        document.getElementById('addChild').addEventListener('click', ()=> createPersonElement('child'));
+        document.getElementById('clear').addEventListener('click', ()=> personsDiv.innerHTML = '');
+
+        function initDefault(){
+            personsDiv.innerHTML = '';
+            createPersonElement('adult');
+            createPersonElement('adult');
+            createPersonElement('child');
+            createPersonElement('child');
+        }
+        initDefault();
+
+        function estimateEnergy(age){
+            if(age >= 18) return ENERGY.adult;
+            if(age <= 6) return ENERGY.child_5_6;
+            if(age <= 10) return ENERGY.child_7_10;
+            if(age <= 13) return ENERGY.child_11_13;
+            return ENERGY.child_14_15;
+        }
+
+        document.getElementById('calc').addEventListener('click', ()=>{
+            const people = [];
+            personsDiv.querySelectorAll('.person-line').forEach(line=>{
+                const age = Number(line.querySelector('input').value) || 0;
+                people.push({age});
+            });
+            if(people.length === 0){
+                alert('Lägg till minst en person.');
+                return;
+            }
+
+            const days = Math.max(1, Math.floor(Number(document.getElementById('days').value) || 1));
+
+            let kcalPerDay = 0;
+            people.forEach(p => { kcalPerDay += estimateEnergy(p.age); });
+
+            const kcalTotal = kcalPerDay * days;
+            const waterTotal = WATER_PER_PERSON_PER_DAY * people.length * days;
+
+            const carbsKcal = kcalTotal * ALLOCATION.carbs;
+            const proteinKcal = kcalTotal * ALLOCATION.protein;
+            const fatsKcal = kcalTotal * ALLOCATION.fats;
+
+            const carbsGr = (carbsKcal / DENSITY.carbs_kcal_per_100g) * 100;
+            const proteinGr = (proteinKcal / DENSITY.protein_kcal_per_100g) * 100;
+            const nutsGr = (fatsKcal / DENSITY.nuts_kcal_per_100g) * 100;
+            const oilLiters = fatsKcal / DENSITY.oil_kcal_per_l;
+
+            const toFixedKg = g => (Math.ceil(g/100) / 10).toFixed(1);
+            const toFixedKgSmall = g => (Math.ceil(g/50) / 20).toFixed(2);
+
+            document.getElementById('kcalPerDay').textContent = `${kcalPerDay.toLocaleString()} kcal/dag`;
+            document.getElementById('kcalTotal').textContent = `${kcalTotal.toLocaleString()} kcal för ${days} dag(ar)`;
+            document.getElementById('waterTotal').textContent = `${waterTotal.toLocaleString()} liter`;
+
+            document.getElementById('carbsKg').textContent = `${toFixedKg(carbsGr)} kg`;
+            document.getElementById('proteinKg').textContent = `${toFixedKg(proteinGr)} kg`;
+            document.getElementById('nutsKg').textContent = `${toFixedKgSmall(nutsGr)} kg`;
+            document.getElementById('oilL').textContent = `${(Math.ceil(oilLiters*10)/10).toFixed(1)} L`;
+
+            document.getElementById('results').style.display = 'block';
+
+            // Count adults vs children
+            let adultCount = 0, childCount = 0;
+            people.forEach(p => {
+                if(p.age >= 18) adultCount++;
+                else childCount++;
+            });
+
+            // Update dynamic conclusion with calculated values
+            const familyDesc = adultCount > 0 && childCount > 0 ?
+                `${adultCount === 1 ? '1 vuxen' : adultCount + ' vuxna'} och ${childCount === 1 ? '1 barn' : childCount + ' barn'}` :
+                adultCount > 0 ? `${adultCount === 1 ? '1 vuxen' : adultCount + ' vuxna'}` :
+                `${childCount === 1 ? '1 barn' : childCount + ' barn'}`;
+
+            document.getElementById('dynamicKcalText').textContent = `För er familj på ${familyDesc} behövs ungefär ${kcalTotal.toLocaleString()} kcal mat och ${waterTotal.toLocaleString()}+ liter vatten för ${days === 7 ? 'en vecka' : days + ' dagar'}.`;
+
+            // Re-initialize Feather icons for the new content
+            feather.replace();
+
+            // Hide generic conclusion and show personalized one
+            document.getElementById('conclusion').style.display = 'none';
+            document.getElementById('dynamicConclusion').style.display = 'block';
+
+            // Smooth scroll to conclusion
+            document.getElementById('dynamicConclusion').scrollIntoView({behavior: 'smooth'});
+        });
+
+        // Initialize animations and icons
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+
+    <!-- Cookie Consent Script -->
+    <script src="cookie-consent.js"></script>
+    <!-- Navbar Script -->
+    <script src="nav.js"></script>
+</body>
+</html>
