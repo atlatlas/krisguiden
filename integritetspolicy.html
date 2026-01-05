@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integritetspolicy - KRISGUIDEN</title>
+    <meta name="description" content="Läs KRISGUIDENs integritetspolicy. Vi förklarar hur vi hanterar dina personuppgifter, cookies och databehandling på vår webbplats.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3A7D44',
+                        secondary: '#2D3748',
+                        accent: '#E53E3E',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('banners/omoss.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Cookie Banner Styles */
+        .cookie-banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .cookie-text {
+            flex: 1;
+        }
+        .cookie-message {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .cookie-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+        .cookie-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .cookie-accept {
+            background-color: #3A7D44;
+            color: white;
+        }
+        .cookie-accept:hover {
+            background-color: #29703d;
+        }
+        .cookie-settings {
+            background-color: #2D3748;
+            color: white;
+        }
+        .cookie-settings:hover {
+            background-color: #4A5568;
+        }
+        .cookie-reject {
+            background-color: transparent;
+            color: white;
+            border: 1px solid #718096;
+        }
+        .cookie-reject:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        @media (max-width: 768px) {
+            .cookie-banner-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            .cookie-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .cookie-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="index.html">
+                            <i data-feather="shield" class="text-primary h-8 w-8"></i>
+                            <span class="ml-2 text-xl font-bold text-secondary">KRISGUIDEN</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="index.html" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Hem</a>
+                    <a href="guider.html" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Guider</a>
+                    <a href="artiklar.html" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Artiklar</a>
+                    <a href="produkter.html" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Produkter</a>
+                    <a href="nyheter.html" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Nyheter</a>
+                    <a href="om.html" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Om oss</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Öppna meny</span>
+                        <i data-feather="menu" class="block h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-bg text-white py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Integritetspolicy</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Hur vi skyddar och hanterar dina personuppgifter</p>
+                <div class="w-20 h-1 bg-accent mx-auto mb-8"></div>
+                <p class="text-lg text-gray-200 max-w-2xl mx-auto">Transparent information om vår databehandling och dina rättigheter</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Policy Content -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="prose prose-lg mx-auto" data-aos="fade-up">
+
+                <p class="text-lg text-gray-700 mb-8">På KRISGUIDEN värnar vi om din integritet och följer dataskyddsförordningen (GDPR). Denna policy förklarar hur vi samlar in, använder och skyddar dina personuppgifter.</p>
+
+                <!-- 1. Vilka är vi -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">1. Vilka är vi?</h2>
+                <div class="bg-gray-50 p-6 rounded-lg mb-8" data-aos="fade-up">
+                    <p class="text-gray-700">
+                        Företagsnamn: KRISGUIDEN<br>
+                        Kontakt: info@krisguiden.nu<br>
+                        Ansvarig för databehandling: KRISGUIDEN-redaktionen<br>
+                        Syfte: Tillhandahålla information om krisberedskap och överlevnad i Sverige
+                    </p>
+                </div>
+
+                <!-- 2. Information vi samlar in -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">2. Vilken information samlar vi in?</h2>
+                <div class="bg-green-50 p-6 rounded-lg mb-8" data-aos="fade-up">
+                    <h3 class="text-lg font-semibold mb-4">Automatiskt insamlad information:</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>IP-adress</li>
+                        <li>Webbläsartyp och version</li>
+                        <li>Operativsystem</li>
+                        <li>Sidor du besöker på vår webbplats</li>
+                        <li>Tid och datum för besök</li>
+                        <li>Hänskickande webbadress (Referer)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-blue-50 p-6 rounded-lg mb-8" data-aos="fade-up">
+                    <h3 class="text-lg font-semibold mb-4">Frivilligt lämnad information:</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>E-postadress (vid nyhetsbrev)</li>
+                        <li>Kommentarer och meddelanden</li>
+                        <li>Information du delar i kontaktformulär</li>
+                    </ul>
+                </div>
+
+                <!-- 3. Cookies och liknande tekniker -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">3. Cookies och liknande tekniker</h2>
+                <p class="mb-6">Vi använder cookies och liknande tekniker för att förbättra din användarupplevelse och analysera webbplatsens prestanda.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8" data-aos="fade-up">
+                    <div class="bg-yellow-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold mb-4">Nödvändiga cookies:</h3>
+                        <p class="text-sm">Bakgrunden för dessa cookies är strikt nödvändig för vår webbplats att fungera och kan inte avaktiveras. Vanligtvis sätts de bara som svar på åtgärder från dig som visar begäran om tjänster.</p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold mb-4">Analys-cookies:</h3>
+                        <p class="text-sm">Hjälper oss att förstå hur besökare interagerar med webbplatsen genom att samla information anonymt och generera rapporter.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Hur använder vi informationen -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">4. Hur använder vi informationen?</h2>
+                <ul class="space-y-4 mb-8" data-aos="fade-up">
+                    <li class="flex items-start">
+                        <i data-feather="check" class="text-primary mr-3 w-5 h-5 mt-1"></i>
+                        <span><strong>Förbättra webbplatsen:</strong> Analysera trafikmönster och användarbeteende</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="check" class="text-primary mr-3 w-5 h-5 mt-1"></i>
+                        <span><strong>Teknisk support:</strong> Felsöka tekniska problem och förbättra säkerheten</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="check" class="text-primary mr-3 w-5 h-5 mt-1"></i>
+                        <span><strong>Kommunikation:</strong> Skicka nyhetsbrev och svara på frågor</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="check" class="text-primary mr-3 w-5 h-5 mt-1"></i>
+                        <span><strong>Legal efterlevnad:</strong> Uppfylla rättsliga skyldigheter</span>
+                    </li>
+                </ul>
+
+                <!-- 5. Delning av information -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">5. Delar vi information med andra?</h2>
+                <p class="mb-6">Vi delar endast dina personuppgifter när det är nödvändigt och legalt tillåtet:</p>
+
+                <ul class="space-y-4 mb-8" data-aos="fade-up">
+                    <li class="flex items-start">
+                        <i data-feather="x" class="text-red-500 mr-3 w-5 h-5 mt-1"></i>
+                        <span><strong>Ej kommersiellt:</strong> Vi säljer eller hyr inte ut dina personuppgifter till tredje part</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="check" class="text-primary mr-3 w-5 h-5 mt-1"></i>
+                        <span><strong>Tjänsteleverantörer:</strong> Begränsad delning med analyseringsverktyg som Google Analytics</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="check" class="text-primary mr-3 w-5 h-5 mt-1"></i>
+                        <span><strong>Legal skyldighet:</strong> Vid myndighetsbegäran eller legal tvist</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-feather="check" class="text-primary mr-3 w-5 h-5 mt-1"></i>
+                        <span><strong>Säkerhet:</strong> För att skydda rättigheter och säkerheten för andra</span>
+                    </li>
+                </ul>
+
+                <!-- 6. Ditt skydd och säkerhet -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">6. Ditt skydd och säkerhet</h2>
+                <div class="bg-red-50 p-6 rounded-lg mb-8" data-aos="fade-up">
+                    <h3 class="text-lg font-semibold mb-4">Datasäkerhet:</h3>
+                    <ul class="space-y-2">
+                        <li>• SSL-kryptering på hela webbplatsen</li>
+                        <li>• Lagra data på säkra servrar med åtkomstkontroll</li>
+                        <li>• Regelmässiga säkerhetsuppdateringar</li>
+                        <li>• Begränsad åtkomst till personuppgifter</li>
+                    </ul>
+                </div>
+
+                <!-- 7. Dina rättigheter -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">7. Dina rättigheter enligt GDPR</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8" data-aos="fade-up">
+                    <div class="bg-primary text-white p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold mb-4">Du har rätt att:</h3>
+                        <ul class="space-y-2">
+                            <li>• Få tillgång till dina uppgifter</li>
+                            <li>• Begära rättelser</li>
+                            <li>• Begära radering</li>
+                            <li>• Invända mot behandling</li>
+                        </ul>
+                    </div>
+                    <div class="bg-accent text-white p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold mb-4">Du kan:</h3>
+                        <ul class="space-y-2">
+                            <li>• Återkalla samtycke</li>
+                            <li>• Begära dataportabilitet</li>
+                            <li>• Klaga till myndighet</li>
+                            <li>• Kontakta oss för frågor</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 8. Kontakt -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">8. Kontakt</h2>
+                <div class="bg-gray-50 p-8 rounded-lg mb-8" data-aos="fade-up">
+                    <p class="text-lg text-gray-700 mb-4">Har du frågor om denna policy eller vill utöva dina rättigheter?</p>
+                    <div class="flex items-center">
+                        <i data-feather="mail" class="text-primary mr-3 w-6 h-6"></i>
+                        <span class="text-lg font-semibold">info@krisguiden.nu</span>
+                    </div>
+                </div>
+
+                <!-- 9. Uppdateringar -->
+                <h2 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-primary pb-2" data-aos="fade-up">9. Uppdateringar av denna policy</h2>
+                <p class="mb-8">Vi kan komma att uppdatera denna integritetspolicy från tid till annan. Vid betydande ändringar informerar vi dig genom att publicera den nya policyn på webbplatsen och/eller skicka ett meddelande till den e-postadress du har registrerat.</p>
+
+                <p><strong>Senaste uppdatering: 2025-01-15</strong></p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">KRISGUIDEN</h3>
+                    <p class="text-gray-300">Din pålitliga källa för prepping och beredskap i Sverige sedan 2023.</p>
+                    <div class="flex mt-4 space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://instagram.com/krisguiden" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Länkar</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition duration-300">Hem</a></li>
+                        <li><a href="guider.html" class="text-gray-300 hover:text-white transition duration-300">Guider</a></li>
+                        <li><a href="artiklar.html" class="text-gray-300 hover:text-white transition duration-300">Artiklar</a></li>
+                        <li><a href="produkter.html" class="text-gray-300 hover:text-white transition duration-300">Produkter</a></li>
+                        <li><a href="nyheter.html" class="text-gray-300 hover:text-white transition duration-300">Nyheter</a></li>
+                        <li><a href="om.html" class="text-gray-300 hover:text-white transition duration-300">Om oss</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Juridik</h3>
+                    <ul class="space-y-2">
+                        <li><a href="integritetspolicy.html" class="text-gray-300 hover:text-white transition duration-300">Integritetspolicy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Användarvillkor</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Affiliate-disclaimer</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Cookies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Kontakt</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                            <span>info@krisguiden.nu</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 KRISGUIDEN. Alla rättigheter förbehållna.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+
+    <!-- Cookie Consent Script -->
+    <script src="cookie-consent.js"></script>
+</body>
+</html>

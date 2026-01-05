@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemberedskap - KRISGUIDEN</title>
+    <meta name="description" content="Komplett guide för hemsäkerhet och krisberedskap. Lär dig skapa ett säkert hem med matförråd, säkerhetssystem och familjeplan.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3A7D44',
+                        secondary: '#2D3748',
+                        accent: '#E53E3E',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('banners/survival_guides.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #3A7D44;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .checklist-item i {
+            color: #3A7D44;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <div class="hero-bg text-white py-20 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Hemberedskap</h1>
+                <p class="text-xl md:text-2xl mb-4 max-w-4xl mx-auto">Skapa ett säkert hem för alla situationer - från matförvaring till säkerhetssystem</p>
+                <div class="w-20 h-1 bg-accent mx-auto mb-8"></div>
+                <div class="flex flex-wrap justify-center gap-4 text-sm">
+                    <span class="bg-primary px-3 py-1 rounded-full">Nybörjare</span>
+                    <span class="bg-gray-600 px-3 py-1 rounded-full">15 min läsning</span>
+                    <span class="bg-gray-600 px-3 py-1 rounded-full">Hemsäkerhet</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guide Content -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Introduction -->
+            <div class="mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-secondary mb-4">Varför hemsäkerhet är viktigt</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Ett säkert hem är grunden för all krisberedskap. Oavsett om det gäller strömavbrott, 
+                    extrema väderförhållanden eller andra oförutsedda händelser, kan rätt förberedelse 
+                    göra skillnad mellan kaos och kontroll. Denna guide tar dig steg för steg genom 
+                    allt du behöver veta för att skapa ett tryggt hem.
+                </p>
+            </div>
+
+            <!-- Step 1: Matförråd -->
+            <div class="mb-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center mb-6">
+                    <div class="step-number">1</div>
+                    <h2 class="text-2xl font-bold text-secondary">Mat- och vattenförråd</h2>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                    <h3 class="text-lg font-semibold text-secondary mb-3">Grundläggande behov per person och vecka:</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="checklist-item"><i data-feather="check"></i> 14 liter vatten (2 liter per dag)</li>
+                        <li class="checklist-item"><i data-feather="check"></i> 3,5 kg torrvaror (ris, pasta, mjöl)</li>
+                        <li class="checklist-item"><i data-feather="check"></i> 2 kg konserver (kött, fisk, grönsaker)</li>
+                        <li class="checklist-item"><i data-feather="check"></i> 1 kg långsiktiga livsmedel (nötter, torkad frukt)</li>
+                        <li class="checklist-item"><i data-feather="check"></i> Medicin och hygienartiklar för 7 dagar</li>
+                    </ul>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold text-secondary mb-2">Viktiga produkter:</h4>
+                        <ul class="text-gray-600 space-y-1">
+                            <li>• Vattenfilter eller reningstabletter</li>
+                            <li>• Gasolkök med extra gasol</li>
+                            <li>• Handkvarn för kaffe/gröt</li>
+                            <li>• Tändstickor och tändare</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-secondary mb-2">Lagra smart:</h4>
+                        <ul class="text-gray-600 space-y-1">
+                            <li>• Rotera matvaror regelbundet</li>
+                            <li>• Förvara på sval och torr plats</li>
+                            <li>• Använd äldsta varorna först</li>
+                            <li>• Kontrollera bäst-före-datum</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Hemsäkerhet -->
+            <div class="mb-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center mb-6">
+                    <div class="step-number">2</div>
+                    <h2 class="text-2xl font-bold text-secondary">Hemsäkerhetssystem</h2>
+                </div>
+
+                <div class="bg-blue-50 p-6 rounded-lg mb-6">
+                    <h3 class="text-lg font-semibold text-secondary mb-3">Grundläggande säkerhetsåtgärder:</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-secondary mb-2">Fysisk säkerhet:</h4>
+                            <ul class="text-gray-600 space-y-1">
+                                <li>• Förstärkta dörrar och lås</li>
+                                <li>• Säkerhetsdörrar i källare</li>
+                                <li>• Larm- och övervakningssystem</li>
+                                <li>• Rökdetektorer i varje rum</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-secondary mb-2">Beredskapsutrustning:</h4>
+                            <ul class="text-gray-600 space-y-1">
+                                <li>• Brandsläckare på lättillgängliga platser</li>
+                                <li>• Nödgenerator eller powerbank</li>
+                                <li>• Reservnycklar hos betrodda personer</li>
+                                <li>• Första hjälpen-kit i varje våning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: El- och vattenberedskap -->
+            <div class="mb-12" data-aos="fade-up" data-aos-delay="300">
+                <div class="flex items-center mb-6">
+                    <div class="step-number">3</div>
+                    <h2 class="text-2xl font-bold text-secondary">El- och vattenberedskap</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-secondary mb-3">Elberedskap:</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li><strong>Powerbanks:</strong> Minst 20,000 mAh per familjemedlem</li>
+                            <li><strong>Solceller:</strong> Bärbara laddare för telefoner</li>
+                            <li><strong>Generator:</strong> För längre strömavbrott</li>
+                            <li><strong>Ficklampor:</strong> LED med extra batterier</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-secondary mb-3">Vattenberedskap:</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li><strong>Vattenförvaring:</strong> 50 liter per person</li>
+                            <li><strong>Rening:</strong> Filter eller kemisk rening</li>
+                            <li><strong>Regnvatten:</strong> Insamlingssystem för trädgård</li>
+                            <li><strong>Sanitet:</strong> Alternativ toalettlösning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Kommunikation -->
+            <div class="mb-12" data-aos="fade-up" data-aos-delay="400">
+                <div class="flex items-center mb-6">
+                    <div class="step-number">4</div>
+                    <h2 class="text-2xl font-bold text-secondary">Kommunikation och information</h2>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-secondary mb-4">Viktiga kommunikationsverktyg:</h3>
+                    <div class="grid md:grid-cols-3 gap-4 text-center">
+                        <div class="bg-white p-4 rounded-lg">
+                            <i data-feather="radio" class="w-8 h-8 text-primary mx-auto mb-2"></i>
+                            <h4 class="font-semibold">Batteriradio</h4>
+                            <p class="text-sm text-gray-600">För att ta emot officiella meddelanden</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <i data-feather="smartphone" class="w-8 h-8 text-primary mx-auto mb-2"></i>
+                            <h4 class="font-semibold">Powerbank</h4>
+                            <p class="text-sm text-gray-600">För att hålla telefoner laddade</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <i data-feather="book" class="w-8 h-8 text-primary mx-auto mb-2"></i>
+                            <h4 class="font-semibold">Kontaktlista</h4>
+                            <p class="text-sm text-gray-600">Viktiga telefonnummer på papper</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: Familjeplan -->
+            <div class="mb-12" data-aos="fade-up" data-aos-delay="500">
+                <div class="flex items-center mb-6">
+                    <div class="step-number">5</div>
+                    <h2 class="text-2xl font-bold text-secondary">Familjens krisplan</h2>
+                </div>
+
+                <div class="bg-yellow-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-secondary mb-3">Viktiga punkter i familjeplanen:</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><strong>Mötesplatser:</strong> En inomhus och en utomhus</li>
+                        <li><strong>Kontaktperson:</strong> Utomstående som kan koordinera</li>
+                        <li><strong>Evakueringsväskor:</strong> En per familjemedlem</li>
+                        <li><strong>Viktiga dokument:</strong> Kopior i vattentät behållare</li>
+                        <li><strong>Specialbehov:</strong> Medicin, dieter, husdjur</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Checklist Section -->
+            <div class="bg-primary text-white p-8 rounded-xl" data-aos="fade-up" data-aos-delay="600">
+                <h2 class="text-2xl font-bold mb-6 text-center">Hemberedskaps-checklista</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-semibold mb-3">Grundläggande utrustning:</h3>
+                        <ul class="space-y-2">
+                            <li class="checklist-item"><i data-feather="check"></i> Matförråd för 7 dagar</li>
+                            <li class="checklist-item"><i data-feather="check"></i> Vattenförråd för 7 dagar</li>
+                            <li class="checklist-item"><i data-feather="check"></i> Första hjälpen-kit</li>
+                            <li class="checklist-item"><i data-feather="check"></i> Ficklampor och batterier</li>
+                            <li class="checklist-item"><i data-feather="check"></i> Radio med batterier</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-3">Säkerhetsåtgärder:</h3>
+                        <ul class="space-y-2">
+                            <li class="checklist-item"><i data-feather="check"></i> Brandsläckare tillgänglig</li>
+                            <li class="checklist-item"><i data-feather="check"></i> Rökdetektorer fungerar</li>
+                            <li class="checklist-item"><i data-feather="check"></i> Familjeplan uppdaterad</li>
+                            <li class="checklist-item"><i data-feather="check"></i> Viktiga dokument säkrade</li>
+                            <li class="checklist-item"><i data-feather="check"></i> Kontaktlista till hands</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="700">
+                <p class="text-gray-600 mb-6">Börja med små steg idag för ett säkrare hem imorgon.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="guider.html" class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-green-700 transition duration-300">
+                        <i data-feather="arrow-left" class="mr-2 w-4 h-4"></i>
+                        Tillbaka till alla guider
+                    </a>
+                    <a href="index.html" class="inline-flex items-center px-6 py-3 bg-secondary text-white rounded-lg hover:bg-gray-700 transition duration-300">
+                        <i data-feather="home" class="mr-2 w-4 h-4"></i>
+                        Till startsidan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">KRISGUIDEN</h3>
+                    <p class="text-gray-300">Din pålitliga källa för prepping och beredskap i Sverige sedan 2023.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Länkar</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition duration-300">Hem</a></li>
+                        <li><a href="guider.html" class="text-gray-300 hover:text-white transition duration-300">Guider</a></li>
+                        <li><a href="artiklar.html" class="text-gray-300 hover:text-white transition duration-300">Artiklar</a></li>
+                        <li><a href="produkter.html" class="text-gray-300 hover:text-white transition duration-300">Produkter</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Juridik</h3>
+                    <ul class="space-y-2">
+                        <li><a href="integritetspolicy.html" class="text-gray-300 hover:text-white transition duration-300">Integritetspolicy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Användarvillkor</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Kontakt</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                            <span>info@krisguiden.nu</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 KRISGUIDEN. Alla rättigheter förbehållna.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize animations and icons
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+
+    <!-- Cookie Consent Script -->
+    <script src="cookie-consent.js"></script>
+    <!-- Navbar Script -->
+    <script src="nav.js"></script>
+</body>
+</html>

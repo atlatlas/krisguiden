@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produkter - Prepping Sverige</title>
+    <meta name="description" content="Upptäck våra rekommenderade prepping-produkter. För överlevnad, beredskap och utomhusbruk i Sverige.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3A7D44',
+                        secondary: '#2D3748',
+                        accent: '#E53E3E',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('banners/products.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Cookie Banner Styles */
+        .cookie-banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .cookie-text {
+            flex: 1;
+        }
+        .cookie-message {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .cookie-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+        .cookie-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .cookie-accept {
+            background-color: #3A7D44;
+            color: white;
+        }
+        .cookie-accept:hover {
+            background-color: #29703d;
+        }
+        .cookie-settings {
+            background-color: #2D3748;
+            color: white;
+        }
+        .cookie-settings:hover {
+            background-color: #4A5568;
+        }
+        .cookie-reject {
+            background-color: transparent;
+            color: white;
+            border: 1px solid #718096;
+        }
+        .cookie-reject:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        @media (max-width: 768px) {
+            .cookie-banner-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            .cookie-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .cookie-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <div id="hero" class="hero-bg text-white py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Andras <span class="text-accent">produkter</span></h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Rekommenderade produkter för prepping och överlevnad i Sverige</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-secondary">Kök och matlagning utomhus</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Kvalitetsprodukter för utomhusmatlagning - från dagsturer till expeditioner</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <img class="h-48 w-full object-cover" src="http://static.photos/technology/640x360/12" alt="MSR PocketRocket 2">
+                    <div class="p-6">
+                        <h3 class="text-lg leading-tight font-medium text-secondary mb-2">MSR PocketRocket 2</h3>
+                        <p class="text-gray-600 mb-4">Litet, superlätt gaskök för dagsturer och vandring — väldigt populärt tack vare snabb koktid och enkelhet. Perfekt som primärt lättviktskök.</p>
+                        <a href="https://outnorth.se" class="inline-flex items-center px-3 py-1 bg-primary text-white text-sm font-medium rounded-full hover:bg-green-700 transition duration-300">
+                            Outnorth
+                            <i data-feather="external-link" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <img class="h-48 w-full object-cover" src="http://static.photos/technology/640x360/13" alt="Jetboil Flash">
+                    <div class="p-6">
+                        <div class="text-sm text-primary font-semibold mb-2">Snabbkokande</div>
+                        <h3 class="text-lg leading-tight font-medium text-secondary mb-2">Jetboil Flash (eller Flash 1.0)</h3>
+                        <p class="text-gray-600 mb-4">Snabbkokande integrerat system (kastrull + brännare). Utmärkt när du vill koka vatten på rekordtid och ha minimal packvolym.</p>
+                        <a href="https://jetboil.johnsonoutdoors.com" class="inline-flex items-center px-3 py-1 bg-primary text-white text-sm font-medium rounded-full hover:bg-green-700 transition duration-300">
+                            Jetboil
+                            <i data-feather="external-link" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <img class="h-48 w-full object-cover" src="http://static.photos/outdoor/640x360/8" alt="Trangia 25-serien">
+                    <div class="p-6">
+                        <div class="text-sm text-primary font-semibold mb-2">Klassiskt</div>
+                        <h3 class="text-lg leading-tight font-medium text-secondary mb-2">Trangia 25-serien (ex. 25-2 / 25-5)</h3>
+                        <p class="text-gray-600 mb-4">Klassiskt alkoholkök med vindskydd och kokset — robust, enkelt att laga riktig mat på och vanligt i Norden. Passar familjer eller längre turer där du vill laga mer än bara koka vatten.</p>
+                        <a href="https://trangia.se" class="inline-flex items-center px-3 py-1 bg-primary text-white text-sm font-medium rounded-full hover:bg-green-700 transition duration-300">
+                            Trangia
+                            <i data-feather="external-link" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <img class="h-48 w-full object-cover" src="http://static.photos/technology/640x360/14" alt="Primus OmniFuel">
+                    <div class="p-6">
+                        <div class="text-sm text-primary font-semibold mb-2">Multifuel</div>
+                        <h3 class="text-lg leading-tight font-medium text-secondary mb-2">Primus OmniFuel</h3>
+                        <p class="text-gray-600 mb-4">Kraftfullt multifuel-kök som klarar olika bränslen (gas, bensin, paraffin). Bra för expeditioner eller där du behöver maximal flexibilitet och effekt.</p>
+                        <a href="https://outnorth.se" class="inline-flex items-center px-3 py-1 bg-primary text-white text-sm font-medium rounded-full hover:bg-green-700 transition duration-300">
+                            Outnorth
+                            <i data-feather="external-link" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <img class="h-48 w-full object-cover" src="http://static.photos/technolog/640x360/15" alt="Optimus Crux">
+                    <div class="p-6">
+                        <div class="text-sm text-primary font-semibold mb-2">Effektivt</div>
+                        <h3 class="text-lg leading-tight font-medium text-secondary mb-2">Optimus Crux / Crux Lite</h3>
+                        <p class="text-gray-600 mb-4">Kompakt, stabil gaskök med bra effekt för sin vikt — populärt bland vandrare som vill ha effektivt matlagning utan extra vikt. (Allmänt välrecenserad modell; finns i nordiska butiker.)</p>
+                        <a href="https://outnorth.se" class="inline-flex items-center px-3 py-1 bg-primary text-white text-sm font-medium rounded-full hover:bg-green-700 transition duration-300">
+                            Outnorth
+                            <i data-feather="external-link" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <img class="h-48 w-full object-cover" src="http://static.photos/technology/640x360/16" alt="Jetboil MiniMo">
+                    <div class="p-6">
+                        <h3 class="text-lg leading-tight font-medium text-secondary mb-2">Jetboil MiniMo</h3>
+                        <p class="text-gray-600 mb-4">Lite mer matlagningsorienterad än Flash — bättre reglage för simmering och matlagning men behåller Jetboils snabbkoksegenskaper. (Bra val om du vill laga mer än bara snabbkaffe.)</p>
+                        <a href="https://jetboil.johnsonoutdoors.com" class="inline-flex items-center px-3 py-1 bg-primary text-white text-sm font-medium rounded-full hover:bg-green-700 transition duration-300">
+                            Jetboil
+                            <i data-feather="external-link" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <img class="h-48 w-full object-cover" src="http://static.photos/outdoor/640x360/9" alt="MSR WindBurner">
+                    <div class="p-6">
+                        <div class="text-sm text-primary font-semibold mb-2">Vindskyddat</div>
+                        <h3 class="text-lg leading-tight font-medium text-secondary mb-2">MSR WindBurner</h3>
+                        <p class="text-gray-600 mb-4">Systemkök med mycket bra vindskydd och effektiv värmeöverföring — fungerar mycket bra i blåsiga förhållanden. (MSR:s systemserie är etablerad för sådana användningsfall.)</p>
+                        <a href="https://www.rei.com" class="inline-flex items-center px-3 py-1 bg-primary text-white text-sm font-medium rounded-full hover:bg-green-700 transition duration-300">
+                            REI
+                            <i data-feather="external-link" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <img class="h-48 w-full object-cover" src="http://static.photos/outdoor/640x360/10" alt="Soto WindMaster">
+                    <div class="p-6">
+                        <h3 class="text-lg leading-tight font-medium text-secondary mb-2">Soto WindMaster</h3>
+                        <p class="text-gray-600 mb-4">Lågprofil-brännare med mycket bra vindprestanda och fint effektreglage — bra balans mellan vikt och funktion för krävande förhållanden. (Soto är känt för precision i brännarteknik.)</p>
+                        <a href="https://outnorth.se" class="inline-flex items-center px-3 py-1 bg-primary text-white text-sm font-medium rounded-full hover:bg-green-700 transition duration-300">
+                            Outnorth
+                            <i data-feather="external-link" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <img class="h-48 w-full object-cover" src="http://static.photos/material/640x360/11" alt="Evernew Titanium">
+                    <div class="p-6">
+                        <div class="text-sm text-primary font-semibold mb-2">Ultralätt</div>
+                        <h3 class="text-lg leading-tight font-medium text-secondary mb-2">Evernew Titanium (alkohol eller gasvarianter)</h3>
+                        <p class="text-gray-600 mb-4">Extremt lätt konstruktion i titan — för ultralättvandrare som prioriterar vikt över bekvämligheter. (Populär i ultralight-communityn.)</p>
+                        <a href="https://outnorth.se" class="inline-flex items-center px-3 py-1 bg-primary text-white text-sm font-medium rounded-full hover:bg-green-700 transition duration-300">
+                            Outnorth
+                            <i data-feather="external-link" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <img class="h-48 w-full object-cover" src="http://static.photos/technology/640x360/17" alt="Campingaz / Coleman">
+                    <div class="p-6">
+                        <div class="text-sm text-primary font-semibold mb-2">Prisvärd</div>
+                        <h3 class="text-lg leading-tight font-medium text-secondary mb-2">Campingaz / Coleman hybrid- eller stormkök</h3>
+                        <p class="text-gray-600 mb-4">Prisvänliga och lättillgängliga alternativ som ofta säljs i svenska butiker — bra val för nybörjare eller för backup på utflykter. (Finns hos många återförsäljare.)</p>
+                        <a href="https://outnorth.se" class="inline-flex items-center px-3 py-1 bg-primary text-white text-sm font-medium rounded-full hover:bg-green-700 transition duration-300">
+                            Outnorth
+                            <i data-feather="external-link" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">KRISGUIDEN</h3>
+                    <p class="text-gray-300">Din pålitliga källa för prepping och beredskap i Sverige sedan 2023.</p>
+                    <div class="flex mt-4 space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Länkar</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition duration-300">Hem</a></li>
+                        <li><a href="guider.html" class="text-gray-300 hover:text-white transition duration-300">Guider</a></li>
+                        <li><a href="produkter.html" class="text-gray-300 hover:text-white transition duration-300">Produkter</a></li>
+                        <li><a href="nyheter.html" class="text-gray-300 hover:text-white transition duration-300">Nyheter</a></li>
+                        <li><a href="om.html" class="text-gray-300 hover:text-white transition duration-300">Om oss</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Juridik</h3>
+                    <ul class="space-y-2">
+                        <li><a href="integritetspolicy.html" class="text-gray-300 hover:text-white transition duration-300">Integritetspolicy</a></li>
+                        <li><a href="användarvillkor.html" class="text-gray-300 hover:text-white transition duration-300">Användarvillkor</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Affiliate-disclaimer</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Cookies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Kontakt</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                            <span>info@krisguiden.nu</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 PreppingSverige. Alla rättigheter förbehållna.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize animations and icons
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+
+    <!-- Navbar Script -->
+    <script src="nav.js"></script>
+    <!-- Cookie Consent Script -->
+    <script src="cookie-consent.js"></script>
+    <!-- Analytics Script -->
+    <script src="dashboard/track.js"></script>
+</body>
+</html>

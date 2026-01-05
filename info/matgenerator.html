@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Beredskapskalkylator — mat & vatten</title>
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto;line-height:1.45;margin:18px;background:#f7f7f7;color:#111}
+  .card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);max-width:920px;margin:16px auto}
+  h1{margin:0 0 10px}
+  label{display:block;margin:8px 0 4px;font-weight:600}
+  .row{display:flex;gap:8px;flex-wrap:wrap}
+  input[type="number"]{padding:8px;border-radius:8px;border:1px solid #ddd;width:80px}
+  button{padding:10px 14px;border-radius:8px;border:0;background:#2b6b5a;color:#fff;font-weight:700;cursor:pointer}
+  table{width:100%;border-collapse:collapse;margin-top:12px}
+  td,th{padding:8px;border-bottom:1px solid #eee;text-align:left}
+  .small{font-size:13px;color:#666}
+  .person-line{display:flex;gap:8px;align-items:center;margin:6px 0}
+  .danger{background:#c0392b}
+  @media(max-width:680px){.row{flex-direction:column}}
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Beredskapskalkylator — mat & vatten</h1>
+    <p class="small">Ange hushållets medlemmar (med ålder) och antal dagar. Kalkylatorn ger totalsiffror och ett enkelt förslag på matmängder.</p>
+
+    <label>Antal dagar att planera för</label>
+    <input id="days" type="number" min="1" value="7" />
+
+    <h3 style="margin-top:14px">Personer i hushållet</h3>
+    <div id="persons"></div>
+    <div class="row" style="margin-top:8px">
+      <button id="addAdult">Lägg till vuxen</button>
+      <button id="addChild">Lägg till barn</button>
+      <button id="clear" style="background:#666">Rensa</button>
+    </div>
+
+    <div style="margin-top:14px">
+      <button id="calc" style="margin-top:6px">Beräkna behov</button>
+    </div>
+
+    <div id="results" style="margin-top:18px;display:none">
+      <h3>Resultat</h3>
+      <table>
+        <tr><th>Totalt energibehov (kcal/dag)</th><td id="kcalPerDay"></td></tr>
+        <tr><th>Totalt energibehov (kcal för perioden)</th><td id="kcalTotal"></td></tr>
+        <tr><th>Vattenbehov (liter totalt)</th><td id="waterTotal"></td></tr>
+        <tr><th>Rekommenderad fördelning (energi%)</th><td>Kolhydrater ~50%, Protein/konserver ~25%, Fett/snacks ~15%, Övrigt ~10%</td></tr>
+      </table>
+
+      <h4 style="margin-top:12px">Föreslagen mängd mat (avrundat)</h4>
+      <table>
+        <tr><th>Kolhydrater (ris/pasta/bröd) — vikt</th><td id="carbsKg"></td></tr>
+        <tr><th>Konserver / protein (kg)</th><td id="proteinKg"></td></tr>
+        <tr><th>Nötter & energirika snacks (kg)</th><td id="nutsKg"></td></tr>
+        <tr><th>Matolja (liter)</th><td id="oilL"></td></tr>
+      </table>
+    </div>
+  </div>
+
+<script>
+  // --- Schabloner ---
+  const ENERGY = {
+    adult: 2250,
+    child_5_6: 1400,
+    child_7_10: 1700,
+    child_11_13: 2000,
+    child_14_15: 2200
+  };
+
+  const WATER_PER_PERSON_PER_DAY = 3; // liter
+
+  const DENSITY = {
+    carbs_kcal_per_100g: 360,
+    protein_kcal_per_100g: 200,
+    nuts_kcal_per_100g: 600,
+    oil_kcal_per_l: 9000
+  };
+
+  const ALLOCATION = {
+    carbs: 0.50,
+    protein: 0.25,
+    fats: 0.15,
+    other: 0.10
+  };
+
+  const personsDiv = document.getElementById('persons');
+
+  function createPersonElement(type){
+    const wrapper = document.createElement('div');
+    wrapper.className = 'person-line';
+    const label = document.createElement('div');
+    label.textContent = type === 'adult' ? 'Vuxen' : 'Barn (5–15 år)';
+    const ageInput = document.createElement('input');
+    ageInput.type = 'number';
+    ageInput.min = (type === 'adult') ? 18 : 5;
+    ageInput.max = (type === 'adult') ? 120 : 15;
+    ageInput.value = (type === 'adult') ? 35 : 10;
+    const removeBtn = document.createElement('button');
+    removeBtn.textContent = 'Ta bort';
+    removeBtn.className = 'danger';
+    removeBtn.style.color = '#fff';
+    removeBtn.addEventListener('click', ()=> wrapper.remove());
+    wrapper.appendChild(label);
+    wrapper.appendChild(ageInput);
+    wrapper.appendChild(removeBtn);
+    personsDiv.appendChild(wrapper);
+  }
+
+  document.getElementById('addAdult').addEventListener('click', ()=> createPersonElement('adult'));
+  document.getElementById('addChild').addEventListener('click', ()=> createPersonElement('child'));
+  document.getElementById('clear').addEventListener('click', ()=> personsDiv.innerHTML = '');
+
+  // Standardfamilj vid start
+  function initDefault(){
+    personsDiv.innerHTML = '';
+    createPersonElement('adult');
+    createPersonElement('adult');
+    createPersonElement('child');
+    createPersonElement('child');
+  }
+  initDefault();
+
+  function estimateEnergy(age){
+    if(age >= 18) return ENERGY.adult;
+    if(age <= 6) return ENERGY.child_5_6;
+    if(age <= 10) return ENERGY.child_7_10;
+    if(age <= 13) return ENERGY.child_11_13;
+    return ENERGY.child_14_15;
+  }
+
+  document.getElementById('calc').addEventListener('click', ()=>{
+    const people = [];
+    personsDiv.querySelectorAll('.person-line').forEach(line=>{
+      const age = Number(line.querySelector('input').value) || 0;
+      people.push({age});
+    });
+    if(people.length === 0){
+      alert('Lägg till minst en person.');
+      return;
+    }
+
+    const days = Math.max(1, Math.floor(Number(document.getElementById('days').value) || 1));
+
+    let kcalPerDay = 0;
+    people.forEach(p => { kcalPerDay += estimateEnergy(p.age); });
+
+    const kcalTotal = kcalPerDay * days;
+    const waterTotal = WATER_PER_PERSON_PER_DAY * people.length * days;
+
+    const carbsKcal = kcalTotal * ALLOCATION.carbs;
+    const proteinKcal = kcalTotal * ALLOCATION.protein;
+    const fatsKcal = kcalTotal * ALLOCATION.fats;
+
+    const carbsGr = (carbsKcal / DENSITY.carbs_kcal_per_100g) * 100;
+    const proteinGr = (proteinKcal / DENSITY.protein_kcal_per_100g) * 100;
+    const nutsGr = (fatsKcal / DENSITY.nuts_kcal_per_100g) * 100;
+    const oilLiters = fatsKcal / DENSITY.oil_kcal_per_l;
+
+    const toFixedKg = g => (Math.ceil(g/100) / 10).toFixed(1);
+    const toFixedKgSmall = g => (Math.ceil(g/50) / 20).toFixed(2);
+
+    document.getElementById('kcalPerDay').textContent = `${kcalPerDay.toLocaleString()} kcal/dag`;
+    document.getElementById('kcalTotal').textContent = `${kcalTotal.toLocaleString()} kcal för ${days} dag(ar)`;
+    document.getElementById('waterTotal').textContent = `${waterTotal.toLocaleString()} liter`;
+
+    document.getElementById('carbsKg').textContent = `${toFixedKg(carbsGr)} kg`;
+    document.getElementById('proteinKg').textContent = `${toFixedKg(proteinGr)} kg`;
+    document.getElementById('nutsKg').textContent = `${toFixedKgSmall(nutsGr)} kg`;
+    document.getElementById('oilL').textContent = `${(Math.ceil(oilLiters*10)/10).toFixed(1)} L`;
+
+    document.getElementById('results').style.display = 'block';
+  });
+</script>
+</body>
+</html>
